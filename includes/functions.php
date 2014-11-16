@@ -1,29 +1,22 @@
 <?php
 
 
-function direcionaRota(){
+function direcionaRota($param){
 
-    $rotas = array( '/'=> 'index.php?home.php',
-                    'home'=> 'index.php?home.php',
-                    'empresa'=> 'index.php?empresa.php',
-                    'produtos'=> 'index.php?produtos.php',
-                    'servicos'=> 'index.php?servicos.php',
-                    'contato'=> 'index.php?contato.php'
-    );
 
-    $url_digitada = $_SERVER['REQUEST_URI'];
+    $rotas = array("home", "empresa", "servicos", "produtos", "contato");
 
-    foreach($rotas as $k => $v){
+    if( in_array($param[1], $rotas)) {
 
-        if ($url_digitada == $k){
+        return require_once('includes/'.$param[1].'.php');
 
-            header("Location: $v");
+    } elseif ($param[1] == ""){
 
-        } else {
+        return require_once('includes/home.php');
 
-            header("Location: 404.php");
-        }
+    } else {
+
+        return "404";
 
     }
-
 }

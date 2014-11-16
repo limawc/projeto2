@@ -7,7 +7,7 @@
 
         echo "<footer>";
 
-        echo "<p>Todos os direitos reservados - " . date(Y) . "</p>";
+        echo "<p>Todos os direitos reservados - " . date("Y") . "</p>";
 
         echo "</footer>";
 

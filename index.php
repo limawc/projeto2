@@ -2,13 +2,17 @@
 
 <?php require_once("includes/menu.php"); ?>
 
+<?php require_once("includes/functions.php"); ?>
+
 <div>
 
     <?php
 
-        $arquivo = $_GET["arquivo"];
+        $url = parse_url("http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
-        require_once("$arquivo");
+        $rota = explode("/",$url['path'],2);
+
+        direcionaRota($rota);
 
     ?>
 

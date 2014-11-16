@@ -1,5 +1,8 @@
-<?php
+<?php require_once("includes/topo.php"); ?>
 
+<?php require_once("includes/menu.php"); ?>
+
+<?php
 
 $nome = $_GET["nome"];
 $email = $_GET["email"];
@@ -8,9 +11,6 @@ $mensagem = $_GET["mensagem"];
 
 ?>
 
-<?php require_once("includes/topo.php"); ?>
-
-<?php require_once("includes/menu.php"); ?>
 
     <section>
 
@@ -45,4 +45,4 @@ $mensagem = $_GET["mensagem"];
 
 
 
-<?php require_once("includes/footer.php")?>
+<?php require_once("includes/footer.php") ?>
